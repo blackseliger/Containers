@@ -27,6 +27,7 @@ class Team {
   addAll(...rest) {
     const test1 = new Character();
     for (let i = 0; i < rest.length; i += 1) {
+        console.log(rest[i]);
       this.members = test1.profiles.reduce((result, profile) => {
         if (profile.name === rest[i]) {
           result.add(profile.name);
