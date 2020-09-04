@@ -10,4 +10,7 @@ class Character {
   }
 }
 
+const test2 = new Character();
+console.log(test2.profiles);
+
 export default Character;
