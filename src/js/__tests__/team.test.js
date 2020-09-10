@@ -1,6 +1,5 @@
 /* eslint-disable linebreak-style */
 import Team from '../app';
-import Character from '../character';
 
 describe('check Team', () => {
   test('check work add => return added profile', () => {
@@ -8,20 +7,12 @@ describe('check Team', () => {
     const test1 = new Team();
     test1.add('Bowman');
     const received = test1.members.has('Bowman');
-    expect(received).toEqual(expected);
+    expect(received).toBe(expected);
   });
-  test('check word addAll => return added profiles', () => {
+  test('check word addAll => return added array! profiles', () => {
     const expected = ['Bowman', 'Swordman', 'Magican'];
     const test1 = new Team();
-    test1.addAll('Bowman', 'Bowman', 'Magican', 'Swordman', 'Magican');
-    test1.members = Array.from(test1.members);
-    const received = test1.members;
-    expect(received).toEqual(expected);
-  });
-  test('check return array of method toArray if activated some method: add or addAll', () => {
-    const expected = ['Bowman', 'Swordman', 'Magican'];
-    const test1 = new Team();
-    test1.addAll('Bowman', 'Bowman', 'Magican', 'Swordman', 'Magican');
+    test1.addAll('Bowman', 'Swordman', 'Magican', 'Magican');
     test1.toArray();
     const received = test1.members;
     expect(received).toEqual(expected);
